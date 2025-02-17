@@ -6,6 +6,8 @@ Doing everything from a command prompt or Git Bash (no IDEs allowed), your missi
 
 
 **Changes to code**
-
+1. static JComboBox cBox1; -> static JComboBox<String> cBox1;
+2. cBox1 = new JComboBox(s1); -> cBox1 = new JComboBox<String>(s1);
 
 **What caused it to stop working?**
+The problem was caused by unsafe operations due to not specifying a datatype for the object. Without the check for data that the object will store, it can cause errors in the code if the wrong type of data is passed into the constructor.
